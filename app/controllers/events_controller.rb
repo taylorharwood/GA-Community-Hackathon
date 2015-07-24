@@ -12,7 +12,7 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to root_path
     else
-      render 'new'
+      render 'events_path'
     end
   end
 
