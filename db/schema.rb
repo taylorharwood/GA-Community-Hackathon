@@ -19,12 +19,13 @@ ActiveRecord::Schema.define(version: 20150724212516) do
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.string   "location"
+    t.string   "description"
     t.string   "event_type"
     t.string   "event_date"
     t.string   "event_time"
     t.text     "event_uri"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
