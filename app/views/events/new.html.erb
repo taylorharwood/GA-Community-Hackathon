@@ -1,11 +1,60 @@
-<h1>Add an Event</h1>
+<h1>Add an Event:</h1>
 
-<%= form_for :event do |f| %>
-  Event Name: <%= f.text_field :name %><br />
-  Event Location: <%= f.text_field :location %><br />
-  Event Type: <%= f.text_field :event_type %><br />
-  Event Date: <%= f.date_field :event_date %><br />
-  Event Description: <%= f.text_area :description %><br />
-  Event Link: <%= f.text_field :event_uri %><br />
-  <%= f.submit %>
+<div class="form-group">
+<%= form_for @event, :html => {:class => "form-horizontal left"}  do |f| %>
+
+ <div class="form-group">
+   <%= f.label :name, "Name:", class: "text-left col-md-4 control-label" %>
+   <div class="col-md-8">
+   <%= f.text_field :name, :required => true, class: "form-control" %>
+   </div>
+ </div>
+
+ <div class="form-group">
+   <%= f.label :location, "Location:", class: "col-md-4 control-label" %>
+   <div class="col-md-8">
+   <%= f.text_field :location, :required => true, class: "form-control" %>
+   </div>
+ </div>
+
+ <div class="form-group">
+   <%= f.label :description, "Description:", class: "col-md-4 control-label" %>
+   <div class="col-md-8">
+   <%= f.text_area :description, :required => true, class: "form-control" %>
+   </div>
+ </div>
+
+ <div class="form-group">
+   <%= f.label :event_type, "Event Type:", class: "col-md-4 control-label" %>
+   <div class="col-md-8">
+   <%= f.text_field :event_type, :required => true, class: "form-control" %>
+   </div>
+ </div>
+
+ <div class="form-group">
+   <%= f.label :event_date, "Event Date:", class: "col-md-4 control-label" %>
+   <div class="col-md-8">
+   <%= f.date_field :event_date, :required => true, class: "form-control" %>
+   </div>
+ </div>
+
+ <div class="form-group">
+   <%= f.label :event_time, "Event Time:", class: "col-md-4 control-label" %>
+   <div class="col-md-8">
+   <%= f.time_field :event_time, :required => true, class: "form-control" %>
+   </div>
+ </div>
+
+ <div class="form-group">
+   <%= f.label :event_uri, "Event URL:", class: "col-md-4 control-label" %>
+   <div class="col-md-8">
+   <%= f.text_field :event_uri, :required => true, class: "form-control" %>
+   </div>
+ </div>
+
+ <p>
+   <%= f.submit "Add Photo", class: "btn btn-default btn-success" %>
+ </p>
+
 <% end %>
+</div>
