@@ -1,2 +1,11 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<h1>Add an Event</h1>
+
+<%= form_for :event do |f| %>
+  Event Name: <%= f.text_field :name %><br />
+  Event Location: <%= f.text_field :location %><br />
+  Event Type: <%= f.text_field :event_type %><br />
+  Event Date: <%= f.date_field :event_date %><br />
+  Event Description: <%= f.text_area :description %><br />
+  Event Link: <%= f.text_field :event_uri %><br />
+  <%= f.submit %>
+<% end %>
